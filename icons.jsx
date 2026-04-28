@@ -1,46 +1,23 @@
-/* global React */
-// Adapta — Inline icon set. Stroke icons, 1.5px, currentColor.
-
-const Icon = ({ d, size = 16, fill = false, sw = 1.5, children, ...rest }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill={fill ? 'currentColor' : 'none'}
-       stroke={fill ? 'none' : 'currentColor'} strokeWidth={sw}
-       strokeLinecap="round" strokeLinejoin="round" {...rest}>
-    {d ? <path d={d} /> : children}
-  </svg>
-);
-
 const Icons = {
-  Inbox:  (p) => <Icon {...p} d="M22 12h-6l-2 3h-4l-2-3H2 M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11Z" />,
-  Send:   (p) => <Icon {...p} d="M22 2 11 13 M22 2l-7 20-4-9-9-4 20-7Z" />,
-  Edit:   (p) => <Icon {...p} d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7 M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5Z" />,
-  Search: (p) => <Icon {...p} d="M21 21l-4.35-4.35 M11 19a8 8 0 1 1 0-16 8 8 0 0 1 0 16Z" />,
-  Filter: (p) => <Icon {...p} d="M22 3H2l8 9.46V19l4 2v-8.54L22 3Z" />,
-  Bell:   (p) => <Icon {...p} d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9 M13.73 21a2 2 0 0 1-3.46 0" />,
-  Globe:  (p) => <Icon {...p} d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z M2 12h20 M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z" />,
-  Sparkles: (p) => <Icon {...p} d="M12 3l1.9 5.6L19.5 10l-5.6 1.4L12 17l-1.9-5.6L4.5 10l5.6-1.4L12 3Z M5 18l.7 2.1L8 21l-2.3.7L5 24l-.7-2.3L2 21l2.3-.9L5 18Z M19 14l.7 2.1L22 17l-2.3.7L19 20l-.7-2.3L16 17l2.3-.9L19 14Z" />,
-  Wand:   (p) => <Icon {...p} d="M15 4V2 M15 16v-2 M8 9h2 M20 9h2 M17.8 11.8 19 13 M15 9h0 M17.8 6.2 19 5 M3 21l9-9 M12.2 6.2 11 5" />,
-  Building: (p) => <Icon {...p} d="M3 21h18 M5 21V7l8-4v18 M19 21V11l-6-4 M9 9v.01 M9 12v.01 M9 15v.01 M9 18v.01" />,
-  Briefcase: (p) => <Icon {...p} d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16 M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16Z" />,
-  Code:   (p) => <Icon {...p} d="m16 18 6-6-6-6 M8 6l-6 6 6 6" />,
-  Info:   (p) => <Icon {...p} d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z M12 16v-4 M12 8h0" />,
-  Chevron:(p) => <Icon {...p} d="m6 9 6 6 6-6" />,
-  Check:  (p) => <Icon {...p} d="M20 6 9 17l-5-5" />,
-  X:      (p) => <Icon {...p} d="M18 6 6 18 M6 6l12 12" />,
-  Settings:(p)=> <Icon {...p} d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z" />,
-  Trash:  (p) => <Icon {...p} d="M3 6h18 M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />,
-  Paperclip:(p)=><Icon {...p} d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48" />,
-  Mic:    (p) => <Icon {...p} d="M12 2a3 3 0 0 0-3 3v7a3 3 0 1 0 6 0V5a3 3 0 0 0-3-3Z M19 10v2a7 7 0 0 1-14 0v-2 M12 19v3" />,
-  Plus:   (p) => <Icon {...p} d="M12 5v14 M5 12h14" />,
-  Reply:  (p) => <Icon {...p} d="M9 17l-5-5 5-5 M4 12h12a4 4 0 0 1 4 4v4" />,
-  Forward:(p) => <Icon {...p} d="m15 17 5-5-5-5 M20 12H8a4 4 0 0 0-4 4v4" />,
-  Apps:   (p) => <Icon {...p} d="M3 3h7v7H3z M14 3h7v7h-7z M14 14h7v7h-7z M3 14h7v7H3z" />,
-  Heart:  (p) => <Icon {...p} d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78Z" />,
-  Eye:    (p) => <Icon {...p} d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />,
-  Trend:  (p) => <Icon {...p} d="m23 6-9.5 9.5-5-5L1 18 M17 6h6v6" />,
-  Flag:   (p) => <Icon {...p} d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1Z M4 22V15" />,
-  Pin:    (p) => <Icon {...p} d="M12 17v5 M9 10.76A2 2 0 0 1 8 9V3h8v6a2 2 0 0 1-1 1.76l-1.74 1A2 2 0 0 0 12 12.5l0 .5h0l0-.5a2 2 0 0 0-1.26-.74L9 10.76Z" />,
-  Compass:(p)=> <Icon {...p} d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z m4.24-14.24L14.12 14.12 9.88 9.88 16.24 7.76Z" />,
-  Layers: (p) => <Icon {...p} d="m12 2 10 5-10 5L2 7l10-5Z m10 13-10 5L2 15 m20-4-10 5L2 11" />,
+  Sparkles: ({ size = 16 }) => <span style={{display: 'inline-block', width: size, height: size, background: '#007AFF', borderRadius: '2px'}} />,
+  X: ({ size = 16 }) => <span style={{display: 'inline-block', fontSize: size}}>✕</span>,
+  Wand: ({ size = 16 }) => <span style={{display: 'inline-block', fontSize: size}}>✨</span>,
+  Compass: ({ size = 16 }) => <span style={{display: 'inline-block', fontSize: size}}>🧭</span>,
+  Trend: ({ size = 16 }) => <span style={{display: 'inline-block', fontSize: size}}>📈</span>,
+  Layers: ({ size = 16 }) => <span style={{display: 'inline-block', fontSize: size}}>📑</span>,
+  Globe: ({ size = 16 }) => <span style={{display: 'inline-block', fontSize: size}}>🌍</span>,
+  Info: ({ size = 16 }) => <span style={{display: 'inline-block', fontSize: size}}>ℹ️</span>,
+  Heart: ({ size = 16 }) => <span style={{display: 'inline-block', fontSize: size}}>❤️</span>,
+  Eye: ({ size = 16 }) => <span style={{display: 'inline-block', fontSize: size}}>👁</span>,
+  Send: ({ size = 16 }) => <span style={{display: 'inline-block', fontSize: size}}>✉️</span>,
+  Chevron: ({ size = 16 }) => <span style={{display: 'inline-block', fontSize: size}}>▼</span>,
+  Paperclip: ({ size = 16 }) => <span style={{display: 'inline-block', fontSize: size}}>📎</span>,
+  Edit: ({ size = 16 }) => <span style={{display: 'inline-block', fontSize: size}}>✏️</span>,
+  Trash: ({ size = 16 }) => <span style={{display: 'inline-block', fontSize: size}}>🗑️</span>,
+  Check: ({ size = 16 }) => <span style={{display: 'inline-block', fontSize: size}}>✓</span>,
+  Briefcase: ({ size = 16 }) => <span style={{display: 'inline-block', fontSize: size}}>💼</span>,
+  Building: ({ size = 16 }) => <span style={{display: 'inline-block', fontSize: size}}>🏢</span>,
+  Code: ({ size = 16 }) => <span style={{display: 'inline-block', fontSize: size}}>{"<>"}</span>,
 };
 
 window.Icons = Icons;
